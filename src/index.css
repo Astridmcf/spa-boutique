@@ -1,0 +1,795 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;500;600&display=swap');
+
+body {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FFE1DF;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  z-index: 1000;
+
+}
+
+.navbar-title {
+  font-size: 24px;
+  color: #BF8A26;
+  margin-right: auto;
+  font-family: 'Fredoka', sans-serif; /* o 'Bungee' para más impacto */
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  margin: 5px;
+  padding: 0;
+}
+
+.navbar-item {
+  margin-left: 20px;
+  font-size: 18px;
+  color: #BF8A26;
+  cursor: pointer;
+  transition: color 0.3s;
+  padding-right: 20px; /* Aumentado padding-right a 20px */
+}
+
+.navbar-item:hover {
+  color: #BF8A26;
+}
+.banner {
+  background-color:     #FFB6C2        ; /* Color de fondo similar al de la imagen */
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  position: relative; /* Para posicionar las estrellas */
+}
+
+.banner-content {
+  max-width: 600px; /* Ajusta el ancho máximo según sea necesario */
+  margin: 0 auto;
+}
+
+.banner-title {
+  font-size: 3em; /* Ajusta el tamaño del título */
+  color:   white  ;                   /* Color del título */
+  margin-bottom: 10px;
+}
+
+.banner-subtitle {
+  font-size: 1em; /* Ajusta el tamaño del subtítulo */
+  color: white ;/* Color del subtítulo */
+  margin-bottom: 20px;
+}
+
+
+
+
+.banner-buttons {
+  display: flex; /* Disposición en fila */
+  justify-content: center; /* Centra los botones horizontalmente */
+  margin-top: 20px; /* Espacio entre el subtítulo y los botones */
+}
+
+.banner-button {
+  background-color:  #BF8A26;
+  color:white ;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 0 10px; /* Espacio entre los botones */
+}
+
+/* Estrellas decorativas */
+.banner::before,
+.banner::after {
+  content: "✨";
+  position: absolute;
+  font-size: 2em;
+}
+
+.banner::before {
+  top: 10px;
+  left: 10px;
+}
+
+.banner::after {
+  bottom: 10px;
+  right: 10px;
+}
+
+.image-display-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 200px;
+  height: 400px;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-wrapper:nth-child(2) { /* Selecciona el segundo elemento image-wrapper */
+  margin-top: 70px; /* Ajusta el margen superior para desplazar la segunda imagen hacia abajo */
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* corregir despues */
+.chic-button {
+  background-color: #BF8A26;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  display: block; /* Para que el botón ocupe todo el ancho disponible */
+  margin: 0 auto; /* Para centrar el botón horizontalmente */
+  border: none;
+  border-radius: 9999px; /* Hace el botón completamente redondo */
+  font-family: 'Fredoka', sans-serif;
+}
+
+.chic-button:hover {
+  background-color: #A67B22;
+}
+
+/* Dispositivos moviles img */
+
+
+/* Responsive para Banner e ImageDisplay */
+@media (max-width: 768px) {
+  .banner {
+    padding: 30px 20px;
+    border-radius: 8px;
+  }
+
+  .banner-title {
+    font-size: 2em;
+  }
+
+  .banner-subtitle {
+    font-size: 1em;
+  }
+
+  .banner-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner-button {
+    margin: 10px 0;
+    width: 80%;
+  }
+
+  .image-display-container {
+    flex-direction: column;
+  }
+
+  .image-wrapper {
+    width: 80%;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .image-wrapper:nth-child(2) {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 40px 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 80px;
+  }
+
+ 
+  
+
+  .banner-title {
+    font-size: 2em;
+    margin-bottom: 15px;
+    line-height: 1.2;
+  }
+
+  .banner-subtitle {
+    font-size: 1em;
+    margin-bottom: 25px;
+    line-height: 1.5;
+  }
+
+  .banner-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .banner-button {
+    width: 100%;
+    max-width: 280px;
+    font-size: 1em;
+    padding: 12px 20px;
+    border-radius: 9999px;
+  }
+
+  .banner::before,
+  .banner::after {
+    font-size: 1.5em;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+  }
+}
+
+
+/* Services secction */
+
+.services-section {
+  background-color: #FFE1DF;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 2.5em;
+  color: #BF8A26;
+  margin-bottom: 10px;
+
+}
+
+.services-subtitle {
+  font-size: 1.1em;
+  color:  #BF8A26;
+  margin-bottom: 30px;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.services-grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.service-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  border: 5px solid #FFB6C2 ;
+}
+
+.service-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-item-title {
+  font-size: 1em;
+  color: #BF8A26;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* Detalles */
+
+/* Detalles Section (Simple & Reusable) */
+.detalles-section-simple {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 20px;
+  background-color: #FFE1DF; /* Color interior del cuadro principal */
+  max-width: 90%;
+  margin: 40px auto; /* Añadido margen arriba y abajo */
+  border: 5px solid  #FFB6C2    ; /* Añadido borde (margen visual) con color primario */
+  flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+  border-radius: 10px;
+}
+
+.detalles-column-simple {
+  text-align: left;
+  margin-bottom: 30px; /* Space between columns (will also create vertical space on wrap) */
+  min-width: 200px; /* Minimum width for each column */
+  padding: 20px; /* Añadido padding interior para el contenido de la columna */
+  background-color: #FFEDED; /* Añadido color de fondo para el interior de la columna */
+  border-radius: 10px; /* Opcional: añadir bordes redondeados a las columnas */
+}
+
+.detalles-title-simple {
+
+  font-size: 1.6em;
+  color: #BF8A26; /* Use the primary text color */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.detalles-subtitle-simple {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1em;
+  color: #BF8A26;
+  margin-bottom: 5px;
+}
+
+/* Responsive adjustment for very small screens */
+@media (max-width: 600px) {
+  .detalles-section-simple {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto; /* Ajustar margen en pantallas pequeñas */
+    border: 3px solid #BF8A26; /* Ajustar grosor del borde en pantallas pequeñas */
+    padding: 20px; /* Ajustar padding en pantallas pequeñas */
+  }
+
+  .detalles-column-simple {
+    min-width: 80%; /* Make columns wider on small screens */
+    margin-bottom: 20px; /* Ajustar margen inferior en pantallas pequeñas */
+    padding: 15px; /* Ajustar padding interior en pantallas pequeñas */
+  }
+}
+
+/*Boutique */
+
+/* components/styles.css (o tu archivo de estilos) */
+
+.boutique-section-padded-emojis {
+  background-color: #FFB6C2; /* Fondo rosa fuerte */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 80px;
+  padding-left: 80px;
+  display: flex;
+  justify-content: space-between; /* Espacio entre texto e imagen */
+  align-items: center; /* Centra verticalmente */
+  text-align: left; /* Alinea el texto a la izquierda */
+  position: relative; /* Necesario para posicionar los emojis absolutamente */
+  overflow: hidden; /* Evita que los emojis sobresalgan si los ajustas mucho */
+}
+
+.boutique-text-container-padded {
+  flex: 1; /* Ocupa el espacio disponible a la izquierda */
+  margin-right: 60px; /* Aumenta el espacio entre texto e imagen */
+}
+
+.boutique-title-padded {
+  color: white;
+  font-size: 2.5em; /* Título más grande */
+  margin-bottom: 20px; /* Aumenta el espacio debajo del título */
+}
+
+.boutique-subtitle-padded {
+  color: white;
+  font-size: 1.4em; /* Subtítulo más grande */
+  margin-bottom: 150px; /* Aumenta el espacio debajo del subtítulo */
+  font-family: 'Fredoka', sans-serif;
+}
+
+.boutique-image-container-padded {
+  width: 300px; /* Ancho de imagen más grande */
+  height: 300px; /* Alto de imagen más grande (cuadrada) */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.boutique-image-padded {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cubre el contenedor cuadrado */
+}
+
+.top-left-emoji {
+  position: absolute;
+  top: 10px; /* Ajusta la distancia desde la parte superior */
+  left: 10px; /* Ajusta la distancia desde la izquierda */
+  font-size: 2em; /* Tamaño del emoji */
+  color: white; /* Color del emoji (puedes cambiarlo) */
+}
+
+.bottom-right-emoji {
+  position: absolute;
+  bottom: 10px; /* Ajusta la distancia desde la parte inferior */
+  right: 10px; /* Ajusta la distancia desde la derecha */
+  font-size: 2em; /* Tamaño del emoji */
+  color: white; /* Color del emoji (puedes cambiarlo) */
+}
+
+@media (max-width: 768px) {
+  .boutique-section-padded-emojis {
+    flex-direction: column; /* Apila en pantallas pequeñas */
+    text-align: center;
+    padding: 30px 30px; /* Ajusta padding en móviles */
+  }
+
+  .boutique-text-container-padded {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px; /* Aumenta el espacio antes de la imagen en móviles */
+  }
+
+  .boutique-title-padded {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+  }
+
+  .boutique-subtitle-padded {
+    font-size: 1.1em;
+    margin-bottom: 30px; /* Aumenta el espacio debajo del subtítulo en móviles */
+  }
+
+  .boutique-image-container-padded {
+    width: 200px;
+    height: 200px;
+  }
+
+  .top-left-emoji,
+  .bottom-right-emoji {
+    font-size: 1.5em; /* Reduce el tamaño del emoji en móviles */
+  }
+}
+
+/* Visitanos */
+
+.visitanos-section-reusable {
+  padding: 40px 80px; /* Padding arriba/abajo y a los lados */
+  background-color: #FFEDED; /* Un color de fondo claro y cálido */
+  text-align: center; /* Centra el título */
+}
+
+.visitanos-title-with-emojis {
+  font-size: 2.5em;
+  color: #BF8A26; /* Color del título (primario) */
+  margin-bottom: 30px;
+  font-weight: bold;
+  white-space: nowrap; /* Evita que el título y los emojis se separen en varias líneas */
+}
+
+.visitanos-content-reusable {
+  display: flex;
+  justify-content: space-around; /* Espacio entre los bloques de información */
+  align-items: flex-start; /* Alinea los bloques en la parte superior */
+  max-width: 960px; /* Ancho máximo del contenido */
+  margin: 0 auto; /* Centra el contenido */
+  flex-wrap: wrap; /* Permite que los bloques se envuelvan en pantallas más pequeñas */
+}
+
+.visitanos-block-reusable {
+  text-align: left; /* Alinea el texto dentro de cada bloque a la izquierda */
+  margin-bottom: 30px; /* Espacio entre los bloques verticalmente */
+  min-width: 250px; /* Ancho mínimo para cada bloque */
+}
+
+.visitanos-subtitle-reusable {
+
+  font-size: 1.6em;
+  color: #BF8A26; /* Color del subtítulo (secundario) */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.visitanos-text-reusable {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.1em;
+  color: #A86F20; /* Color del texto */
+  margin-bottom: 5px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .visitanos-section-reusable {
+    padding: 30px 30px;
+  }
+
+  .visitanos-title-with-emojis {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+  }
+
+  .visitanos-content-reusable {
+    flex-direction: column; /* Apila los bloques en pantallas pequeñas */
+    align-items: center; /* Centra los bloques */
+  }
+
+  .visitanos-block-reusable {
+    text-align: center; /* Centra el texto en pantallas pequeñas */
+    min-width: 80%; /* Ancho mayor para los bloques en móviles */
+    margin-bottom: 40px; /* Más espacio entre bloques apilados */
+  }
+}
+
+/* Solial Media */
+
+.social-media-section-reusable {
+  display: flex;
+  width: 100%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 30px 0;
+  background-color: #fff0f5;
+}
+
+.social-media-left-reusable,
+.social-media-right-reusable {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 30px; /* Reducido el padding para menor altura */
+  text-align: center;
+}
+
+.social-media-left-reusable {
+  background-color: #F4C2C2; /* Soft Rose */
+  color: white;
+}
+
+.social-media-right-reusable {
+  background-color: white;
+  color: #BF8A26;
+}
+
+.social-media-heading-left-reusable {
+  font-size: 2.5em;
+  margin-bottom: 8px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.social-media-subheading-left-reusable {
+
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.social-media-link-left-reusable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1em;
+  margin-top: 20px;
+}
+
+.social-media-icon-left-reusable {
+  font-size: 2em;
+  margin-bottom: 3px;
+}
+
+.social-media-username-left-reusable {
+  
+  font-weight: 600;
+}
+
+.social-media-heading-right-reusable {
+  
+  font-size: 2em;
+  margin-bottom: 15px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.social-media-link-right-reusable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1em;
+}
+
+.social-media-icon-right-reusable {
+  font-size: 2em;
+  color: #BF8A26;
+  margin-bottom: 3px;
+}
+
+.social-media-username-right-reusable {
+ 
+  font-weight: 600;
+  color: #BF8A26;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .social-media-section-reusable {
+    flex-direction: column;
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+
+  .social-media-left-reusable,
+  .social-media-right-reusable {
+    padding: 30px 20px;
+  }
+
+  .social-media-heading-left-reusable,
+  .social-media-heading-right-reusable {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+
+  .social-media-subheading-left-reusable {
+    font-size: 1em;
+    margin-bottom: 15px;
+  }
+
+  .social-media-link-left-reusable,
+  .social-media-link-right-reusable {
+    font-size: 1em;
+    gap: 6px;
+    margin-top: 15px;
+  }
+
+  .social-media-icon-left-reusable,
+  .social-media-icon-right-reusable {
+    font-size: 1.8em;
+    margin-bottom: 2px;
+  }
+}
+
+/* PromotionDev */
+
+.promotion-dev-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F5E1DA; /* Warm Beige */
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin: 40px 0;
+}
+
+.promotion-dev-text {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.promotion-dev-title {
+  
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #C3A6D1; /* Dusty Lavender */
+  margin-bottom: 20px;
+}
+
+.promotion-dev-description {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.promotion-dev-description strong {
+  color: #C3A6D1; /* Dusty Lavender */
+}
+
+.promotion-dev-button {
+  display: inline-block;
+  background-color: #C3A6D1; /* Dusty Lavender */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.promotion-dev-button:hover {
+  background-color: #b593c1;
+}
+
+.promotion-dev-image {
+  flex: 1;
+  max-width: 350px;
+  height: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .promotion-dev-section {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .promotion-dev-text {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .promotion-dev-title {
+    font-size: 2em;
+  }
+
+  .promotion-dev-description {
+    font-size: 1em;
+  }
+
+  .promotion-dev-image {
+    margin-top: 30px;
+  }
+}
+
+/* Footer */
+
+.footer-chic {
+  background-color: #FFE1DF; /* Un color de fondo muy claro, similar al navbar */
+  padding: 20px 0;
+  text-align: center;
+  
+}
+
+.footer-content-chic {
+  max-width: 960px; /* Ancho máximo para alinear con otras secciones si es necesario */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-copyright-chic {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 18px;
+  color: #BF8A26; /* Un color de texto gris suave */
+  opacity: 0.7; /* Ligeramente transparente para un look sutil */
+  letter-spacing: 0.3px; /* Un ligero espaciado para elegancia */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .footer-chic {
+    padding: 15px 0;
+  }
+
+  .footer-copyright-chic {
+    font-size: 0.8em;
+  }
+}
