@@ -47,6 +47,141 @@ body {
 .navbar-item:hover {
   color: #BF8A26;
 }
+
+/*Movile*/
+
+
+/* Estilos base */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FFE1DF;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-title {
+  font-size: 26px;
+  color: #BF8A26;
+  margin-right: auto;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-title img {
+  height: 40px;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  margin-left: 25px;
+  font-size: 18px;
+  color: #BF8A26;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  padding: 10px 0;
+}
+
+.navbar-item:hover {
+  color: #D4A373;
+}
+
+.navbar-toggle {
+  display: none; /* Oculto por defecto en escritorio */
+  cursor: pointer;
+  padding: 10px;
+  color: #BF8A26;
+  font-size: 28px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.navbar-toggle:hover {
+  transform: scale(1.1);
+}
+
+.navbar-toggle svg {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .navbar-links {
+    
+      display: none;
+      flex-direction: column;
+      background-color: rgba(255, 225, 223, 0.95);
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 85%; /* Aumentamos el ancho del menú desplegable */
+      height: 100%;
+      padding-top: 60px;
+      box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease-out;
+      z-index: 1001;
+      overflow-y: auto;
+  }
+
+  .navbar-links.active {
+    display: flex; /* Mostrar cuando la clase 'active' está presente */
+    transform: translateX(100%); /* Desplazarlo para que sea visible */
+  }
+
+  .navbar-item {
+    padding-left: 70px;
+    padding-right: 0; /* Eliminamos el padding del lado derecho */
+    border-bottom: 1px solid rgba(191, 138, 38, 0.2);
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Asegurándonos de que los items activos también tengan el padding correcto */
+  .navbar-links.active .navbar-item {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .navbar-item:last-child {
+    border-bottom: none;
+  }
+
+
+
+  .navbar-toggle {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    color: #BF8A26;
+    font-size: 28px;
+    z-index: 1002;
+  }
+
+  .navbar-title {
+    font-size: 22px;
+  }
+
+  .navbar-title img {
+    height: 35px;
+    margin-right: 15px;
+  }
+}
 .banner {
   background-color:     #FFB6C2        ; /* Color de fondo similar al de la imagen */
   padding: 20px;
@@ -92,23 +227,9 @@ body {
   margin: 0 10px; /* Espacio entre los botones */
 }
 
-/* Estrellas decorativas */
-.banner::before,
-.banner::after {
-  content: "✨";
-  position: absolute;
-  font-size: 2em;
-}
 
-.banner::before {
-  top: 10px;
-  left: 10px;
-}
 
-.banner::after {
-  bottom: 10px;
-  right: 10px;
-}
+
 
 .image-display-container {
   display: flex;
@@ -135,6 +256,25 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+
+@media (max-width: 768px) {
+  .image-display-container {
+    display: flex;
+    flex-direction: column; /* Apilar las imágenes verticalmente */
+    align-items: center; /* Centrar las imágenes horizontalmente */
+  }
+
+  .image-wrapper {
+    width: 80%; /* Ajustar el ancho al 80% de la pantalla */
+    height: auto; /* Mantener la proporción de la imagen */
+    margin: 20px 0; /* Espacio vertical entre las imágenes */
+  }
+
+  .image-wrapper:nth-child(2) {
+    margin-top: 20px; /* Ajustar el margen superior para mantener un espaciado consistente */
+  }
+}s
 
 /* corregir despues */
 .chic-button {
@@ -202,51 +342,43 @@ body {
 
 @media (max-width: 768px) {
   .banner {
-    padding: 40px 20px;
+    padding-top: 20px; /* Reducimos aún más el padding superior */
+    padding-bottom: 20px; /* Reducimos aún más el padding inferior */
+    padding-left: 20px;
+    padding-right: 20px;
     border-radius: 12px;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 80px; /* Mantenemos este margen por ahora */
   }
-
- 
-  
 
   .banner-title {
     font-size: 2em;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     line-height: 1.2;
   }
 
   .banner-subtitle {
     font-size: 1em;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     line-height: 1.5;
   }
 
   .banner-buttons {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    margin-top: 15px;
   }
 
   .banner-button {
     width: 100%;
     max-width: 280px;
     font-size: 1em;
-    padding: 12px 20px;
+    padding: 10px 20px;
     border-radius: 9999px;
   }
-
-  .banner::before,
-  .banner::after {
-    font-size: 1.5em;
-    top: 8px;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
-  }
 }
-
 
 /* Services secction */
 
@@ -740,23 +872,45 @@ body {
   .promotion-dev-section {
     flex-direction: column;
     padding: 30px 20px;
+    align-items: center; /* Centramos los elementos verticalmente */
   }
 
   .promotion-dev-text {
     text-align: center;
     max-width: 100%;
+    margin-bottom: 20px; /* Añadimos un poco de espacio entre el texto y la imagen */
   }
 
   .promotion-dev-title {
     font-size: 2em;
+    margin-bottom: 15px;
   }
 
   .promotion-dev-description {
     font-size: 1em;
+    line-height: 1.6; /* Mejora la legibilidad del texto */
   }
 
   .promotion-dev-image {
-    margin-top: 30px;
+    margin-top: 20px; /* Reducimos un poco el margen superior */
+    width: 150px; /* Establecemos un ancho fijo más pequeño para la imagen */
+    height: 150px; /* Forzamos una altura igual para mantener la forma circular */
+    overflow: hidden; /* Asegura que la imagen se mantenga dentro del círculo */
+    border-radius: 50%; /* Mantiene la forma circular */
+  }
+
+  .promotion-dev-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre el contenedor manteniendo la proporción */
+  }
+
+  .promotion-dev-button {
+    margin-top: 25px; /* Añadimos espacio entre la imagen y el botón */
+    padding: 12px 24px;
+    font-size: 15px; /* Aumentamos el tamaño del texto del botón */
+    border-radius: 8px;
+    /* Añade estilos adicionales para el botón si lo deseas */
   }
 }
 
